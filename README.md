@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repo](hhttps://github.com/Sekonso/sekonso-news-homepage)
+- Live Site URL: [Github Page](https://sekonso.github.io/sekonso-news-homepage/)
 
 ## My process
 
@@ -46,7 +46,9 @@ Users should be able to:
 
 Custom Scrollbar
 
-```css
+SCSS
+
+```scss
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -56,7 +58,9 @@ Custom Scrollbar
 }
 ```
 
-Slide out hamburger menu
+Responsive Navbar and Hamburger Menu
+
+HTML
 
 ```html
 <nav class="navbar">
@@ -81,33 +85,90 @@ Slide out hamburger menu
 </nav>
 ```
 
-```css
+SCSS
+
+```scss
 .navbar {
   display: flex;
   justify-content: space-between;
 }
 
-.navbar-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
+@media only screen and (width < $Mobile-screen) {
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: $Off-white;
+    transition: right 0.4s ease-in;
+
+    &.active {
+      right: 0;
+    }
+
+    & .close-list {
+      cursor: pointer;
+      text-align: right;
+      margin-bottom: 5rem;
+      padding: 2rem;
+    }
+
+    & li {
+      list-style: none;
+      padding: 1rem 2rem;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $Very-dark-blue;
+      font-size: 1.3rem;
+    }
+  }
 }
 
-.nav-list {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100vh;
-  background-color: $Off-white;
-  transition: right 0.4s ease-in;
+@media only screen and (width > $Mobile-screen) {
+  .navbar-toggle {
+    display: none;
+  }
 
-  &.active {
-    right: 0;
+  .nav-list {
+    & .close-list {
+      display: none;
+    }
+
+    & ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    & li {
+      list-style: none;
+      margin-left: 2rem;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $Very-dark-blue;
+      font-size: 1.3rem;
+    }
+
+    & a:hover {
+      color: $Soft-red;
+    }
   }
 }
 ```
+
+JS
 
 ```js
 const navbarToggle = document.querySelector(".navbar-toggle");
@@ -124,7 +185,9 @@ document.querySelector(".close-list").addEventListener("click", () => {
 
 Making an element to stay square by setting the height according to it's width
 
-```css
+SCSS
+
+```scss
 & .image {
   background: url("./assets/images/image-web-3-mobile.jpg") no-repeat;
   padding-left: 100%;
