@@ -106,12 +106,15 @@ body {
 }
 
 .attribution {
-  display: none;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  text-decoration: none;
+  color: hsl(35deg, 77%, 62%);
+}
+.attribution a:hover {
+  color: hsl(5deg, 85%, 63%);
 }
 
 @media only screen and (width < 768px) {
