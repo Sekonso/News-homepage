@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/Sekonso/sekonso-news-homepage)
-- Live Site URL: [Github Page](https://sekonso.github.io/sekonso-news-homepage/)
+- Live Site URL: [Github Page](https://sekonso.github.io/News-homepage/)
 
 ## My process
 
